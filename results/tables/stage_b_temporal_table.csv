@@ -1,0 +1,5 @@
+Model,ROC-AUC,PR-AUC,Brier Score,ECE,F1 Score,Accuracy,Recall,Precision,Balanced Acc,MCC
+LogisticRegression,1.0,1.0,0.0061,0.0275,1.0,1.0,1.0,1.0,1.0,1.0
+RandomForest,1.0,1.0,0.0107,0.0444,0.9927,0.995,1.0,0.9855,0.9962,0.989
+LightGBM,0.9999,0.9998,0.0036,0.0051,0.9927,0.995,1.0,0.9855,0.9962,0.989
+PyTorch_MLP,1.0,1.0,0.0037,0.0254,0.9927,0.995,1.0,0.9855,0.9962,0.989
