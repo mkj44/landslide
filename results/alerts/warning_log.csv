@@ -1,0 +1,4 @@
+alert_id,timestamp_utc,target_date,location_name,latitude,longitude,risk_level,probability,rain_3d_mm,rain_7d_mm,slope_deg,recommended_action
+ALERT-F80A3FCB,2026-10-19T09:12:56Z,2026-10-19,Western Ghats Field Station,11.855,75.361,Critical,1.0,130.0,310.0,32.0,Emergency Alert: immediate evacuation of vulnerable slope zones
+ALERT-09540499,2026-10-19T09:13:12Z,2026-10-19,Western Ghats Field Station,12.0,75.0,Critical,0.9167,5.0,12.0,8.0,Emergency Alert: immediate evacuation of vulnerable slope zones
+ALERT-DD9890E8,2026-10-19T09:15:40Z,2026-10-19,Western Ghats Field Station,12.0,75.0,Low,0.0052,10.0,25.0,15.0,Routine monitoring
