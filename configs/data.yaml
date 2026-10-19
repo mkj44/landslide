@@ -1,0 +1,58 @@
+# Data configuration for Landslide Detection, Prediction, and Early-Warning Pipeline
+
+stage_a:
+  datasets:
+    landslide4sense:
+      raw_dir: "data/raw/landslide4sense"
+      processed_dir: "data/processed/landslide4sense"
+      patch_size: 128
+      total_bands: 14
+      band_names:
+        - "B01_CoastalAerosol"
+        - "B02_Blue"
+        - "B03_Green"
+        - "B04_Red"
+        - "B05_VRE1"
+        - "B06_VRE2"
+        - "B07_VRE3"
+        - "B08_NIR"
+        - "B8A_NarrowNIR"
+        - "B09_WaterVapour"
+        - "B11_SWIR1"
+        - "B12_SWIR2"
+        - "DEM"
+        - "Slope"
+      positive_thresholds: [0.001, 0.01, 0.05]
+      default_threshold: 0.01
+    bijie:
+      raw_dir: "data/raw/bijie"
+      processed_dir: "data/processed/bijie"
+      image_size: 128
+      channels: 3
+
+stage_b:
+  study_region:
+    name: "Western_Ghats_Kerala"
+    bbox: [75.0, 8.0, 77.5, 12.8] # [min_lon, min_lat, max_lon, max_lat]
+    elevation_bounds: [50, 2600]
+  catalog:
+    glc_source: "nasa_glc"
+    raw_path: "data/raw/nasa_glc/Global_Landslide_Catalog_Export.csv"
+    processed_path: "data/processed/stage_b_events.parquet"
+    min_accuracy_km: 10.0
+    valid_categories: ["landslide", "mudslide", "debris_flow", "rock_fall"]
+  negative_sampling:
+    ratio_neg_to_pos: 2.0
+    buffer_exclusion_km: 5.0
+    elevation_matching: true
+    random_seed: 42
+  features:
+    terrain:
+      dem_resolution_m: 30
+      metrics: ["slope", "aspect", "profile_curvature", "plan_curvature", "tri"]
+    rainfall:
+      source: "chirps_daily"
+      windows_days: [1, 3, 7, 14, 30]
+      compute_max_intensity: true
+    vegetation:
+      indices: ["ndvi", "ndwi"]

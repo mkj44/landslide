@@ -1,0 +1,61 @@
+# Stage A Detection Model Configuration
+
+input:
+  band_subset: "all14"  # Options: "rgb", "rgb_nir", "all14"
+  channels: 14
+  img_size: 128
+  norm_stats_file: "artifacts/norm_stats.json"
+
+training:
+  seeds: [42, 123, 999]
+  batch_size: 32
+  num_workers: 2
+  max_epochs: 25
+  learning_rate: 0.0003
+  weight_decay: 0.01
+  cosine_t_max: 25
+  min_lr: 0.000001
+  gradient_clip: 1.0
+  early_stopping_patience: 6
+  early_stopping_metric: "val_f1"
+  use_amp: true
+
+imbalance:
+  strategy: "focal_loss" # Options: "none", "class_weights", "weighted_sampler", "focal_loss"
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+
+augmentation:
+  enabled: true
+  horizontal_flip_prob: 0.5
+  vertical_flip_prob: 0.5
+  random_rotate90_prob: 0.5
+  brightness_contrast_jitter: 0.1
+  gaussian_noise_std: 0.01
+
+models:
+  baseline_rf:
+    n_estimators: 100
+    max_depth: 12
+    random_state: 42
+  baseline_xgb:
+    n_estimators: 100
+    max_depth: 6
+    learning_rate: 0.1
+  custom_cnn:
+    base_channels: 32
+    dropout: 0.2
+  resnet50:
+    pretrained: true
+    freeze_epochs: 3
+  efficientnet_b0:
+    pretrained: true
+    freeze_epochs: 3
+  clip:
+    model_name: "ViT-B-32"
+    pretrained: "openai"
+    prompts:
+      - "a satellite photo of a landslide scar"
+      - "an aerial view of a steep mountain slope with a landslide"
+      - "satellite imagery showing soil erosion and mudslide damage"
+      - "a satellite view of stable green forested terrain"

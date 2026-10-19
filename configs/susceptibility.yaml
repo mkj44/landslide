@@ -1,0 +1,53 @@
+# Stage B Susceptibility and Short-Term Risk Configuration
+
+cv_strategy:
+  type: "spatial_block_cv"
+  n_spatial_blocks: 5
+  block_size_deg: 0.5
+  temporal_holdout_years: [2018, 2019, 2020, 2021, 2022] # holdout test years
+  training_years_max: 2017
+
+smote:
+  enabled_inside_folds: true
+  sampling_strategy: "auto"
+  k_neighbors: 5
+
+calibration:
+  method: "isotonic" # "platt" (sigmoid) or "isotonic"
+  cv: "prefit"
+
+models:
+  logistic_regression:
+    penalty: "l2"
+    C: 1.0
+    max_iter: 1000
+    solver: "lbfgs"
+  random_forest:
+    n_estimators: 200
+    max_depth: 10
+    min_samples_split: 5
+    random_state: 42
+  xgboost:
+    n_estimators: 200
+    max_depth: 5
+    learning_rate: 0.05
+    subsample: 0.8
+    colsample_bytree: 0.8
+    eval_metric: "logloss"
+  lightgbm:
+    n_estimators: 200
+    max_depth: 5
+    learning_rate: 0.05
+    subsample: 0.8
+    colsample_bytree: 0.8
+  mlp:
+    hidden_dims: [64, 32]
+    dropout: 0.2
+    learning_rate: 0.001
+    max_epochs: 50
+    batch_size: 64
+
+threshold_analysis:
+  id_curve:
+    min_duration_hours: 24
+    max_duration_hours: 720

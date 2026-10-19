@@ -1,0 +1,39 @@
+# Stage C Early Warning Configuration
+
+risk_levels:
+  categories:
+    - name: "Low"
+      color: "#2ecc71"
+      action: "Routine monitoring"
+    - name: "Moderate"
+      color: "#f39c12"
+      action: "Advisory: heightened vigilance in steep terrain"
+    - name: "High"
+      color: "#e67e22"
+      action: "Warning: prepare response teams, inspect critical slopes"
+    - name: "Critical"
+      color: "#e74c3c"
+      action: "Emergency Alert: immediate evacuation of vulnerable slope zones"
+
+threshold_optimization:
+  criterion: "cost_sensitive" # "cost_sensitive" or "target_recall"
+  cost_miss_to_false_alarm_ratio: 10.0 # 10:1 penalty for missed landslide vs false alarm
+  target_recall: 0.90
+  val_split_fraction: 0.2
+
+trigger_rules:
+  rainfall_trigger:
+    mode: "compound" # "compound" (prob + rainfall), "prob_only", "id_curve"
+    percentile_threshold_7d: 85.0
+    percentile_threshold_3d: 90.0
+    id_curve_file: "artifacts/calibration/id_threshold_curve.json"
+  persistence:
+    required_consecutive_days: 2
+  cooldown:
+    cooldown_days_after_alert: 3
+
+outputs:
+  alerts_dir: "results/alerts"
+  raster_dir: "results/alerts/rasters"
+  figures_dir: "results/alerts/figures"
+  formats: ["csv", "json", "geotiff", "png"]
