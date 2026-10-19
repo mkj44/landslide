@@ -37,7 +37,7 @@ susceptibility:
 	$(PYTHON) scripts/train_susceptibility.py
 
 warning:
-	$(PYTHON) scripts/generate_alerts.py
+	$(PYTHON) scripts/warn.py --batch data/processed/stage_b_features.csv --map
 
 evaluate:
 	$(PYTHON) scripts/evaluate.py
