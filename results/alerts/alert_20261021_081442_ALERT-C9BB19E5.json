@@ -1,0 +1,24 @@
+{
+  "alert_id": "ALERT-C9BB19E5",
+  "timestamp_utc": "2026-10-21T08:14:42Z",
+  "target_date": "2026-10-21",
+  "location": {
+    "name": "Kannur Sector 4",
+    "latitude": 11.855,
+    "longitude": 75.361
+  },
+  "risk_assessment": {
+    "level": "Critical",
+    "probability": 1.0,
+    "recommended_action": "Emergency Alert: immediate evacuation of vulnerable slope zones",
+    "color_code": "#e74c3c"
+  },
+  "key_trigger_conditions": {
+    "3d_antecedent_rainfall_mm": 145.0,
+    "7d_antecedent_rainfall_mm": 330.0,
+    "terrain_slope_deg": 31.5,
+    "elevation_m": 720.0,
+    "vegetation_ndvi": 0.38
+  },
+  "disclaimer": "DISCLAIMER: This system is a research prototype developed for academic and scientific evaluation. It is NOT an operational civil safety warning system and should NOT be used for evacuation or life-safety decisions."
+}

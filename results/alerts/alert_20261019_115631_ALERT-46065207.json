@@ -1,0 +1,24 @@
+{
+  "alert_id": "ALERT-46065207",
+  "timestamp_utc": "2026-10-19T11:56:31Z",
+  "target_date": "2026-10-19",
+  "location": {
+    "name": "Western Ghats Field Station",
+    "latitude": 11.855,
+    "longitude": 75.361
+  },
+  "risk_assessment": {
+    "level": "Critical",
+    "probability": 1.0,
+    "recommended_action": "Emergency Alert: immediate evacuation of vulnerable slope zones",
+    "color_code": "#e74c3c"
+  },
+  "key_trigger_conditions": {
+    "3d_antecedent_rainfall_mm": 140.0,
+    "7d_antecedent_rainfall_mm": 320.0,
+    "terrain_slope_deg": 30.0,
+    "elevation_m": 650.0,
+    "vegetation_ndvi": 0.35
+  },
+  "disclaimer": "DISCLAIMER: This system is a research prototype developed for academic and scientific evaluation. It is NOT an operational civil safety warning system and should NOT be used for evacuation or life-safety decisions."
+}

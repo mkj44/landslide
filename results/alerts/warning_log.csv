@@ -2,3 +2,10 @@ alert_id,timestamp_utc,target_date,location_name,latitude,longitude,risk_level,p
 ALERT-F80A3FCB,2026-10-19T09:12:56Z,2026-10-19,Western Ghats Field Station,11.855,75.361,Critical,1.0,130.0,310.0,32.0,Emergency Alert: immediate evacuation of vulnerable slope zones
 ALERT-09540499,2026-10-19T09:13:12Z,2026-10-19,Western Ghats Field Station,12.0,75.0,Critical,0.9167,5.0,12.0,8.0,Emergency Alert: immediate evacuation of vulnerable slope zones
 ALERT-DD9890E8,2026-10-19T09:15:40Z,2026-10-19,Western Ghats Field Station,12.0,75.0,Low,0.0052,10.0,25.0,15.0,Routine monitoring
+ALERT-5620EF6C,2026-10-19T11:52:08Z,2026-10-19,Kannur Sector 4,11.855,75.361,Critical,1.0,145.0,330.0,31.5,Emergency Alert: immediate evacuation of vulnerable slope zones
+ALERT-A3021720,2026-10-19T11:54:47Z,2026-10-19,Kannur Sector 4,11.855,75.361,Critical,1.0,145.0,330.0,31.5,Emergency Alert: immediate evacuation of vulnerable slope zones
+ALERT-46065207,2026-10-19T11:56:31Z,2026-10-19,Western Ghats Field Station,11.855,75.361,Critical,1.0,140.0,320.0,30.0,Emergency Alert: immediate evacuation of vulnerable slope zones
+ALERT-E94340CE,2026-10-21T08:09:48Z,2026-10-21,Western Ghats Field Station,11.855,75.361,Critical,1.0,130.0,310.0,32.0,Emergency Alert: immediate evacuation of vulnerable slope zones
+ALERT-C9BB19E5,2026-10-21T08:14:42Z,2026-10-21,Kannur Sector 4,11.855,75.361,Critical,1.0,145.0,330.0,31.5,Emergency Alert: immediate evacuation of vulnerable slope zones
+ALERT-43BD62DB,2026-10-21T08:32:34Z,2026-10-21,Western Ghats Field Station,11.855,75.361,Critical,1.0,130.0,310.0,32.0,Emergency Alert: immediate evacuation of vulnerable slope zones
+ALERT-06C80A6E,2026-10-21T08:32:52Z,2026-10-21,Western Ghats Field Station,12.0,75.0,Low,0.0052,10.0,25.0,15.0,Routine monitoring
